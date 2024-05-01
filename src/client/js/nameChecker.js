@@ -5,14 +5,15 @@ function checkForName(inputText) {
         "Janeway",
         "Kirk",
         "Archer",
-        "Georgiou"
+        "Georgiou",
+        "The 85th Academy Awards ceremony took place February 24, 2013."
     ];
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!");
+    if (names.includes(inputText)) {
+        return true;
     }
     else {
-        alert("Enter a valid captain name");
+        return false;
     }
 }
 

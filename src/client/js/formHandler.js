@@ -3,7 +3,7 @@ import { checkForName } from './nameChecker'
 
 // If working on Udacity workspace, update this with the Server API URL e.g. `https://wfkdhyvtzx.prod.udacity-student-workspaces.com/api`
 // const serverURL = 'https://wfkdhyvtzx.prod.udacity-student-workspaces.com/api'
-const serverURL = 'https://localhost:8000/api'
+const serverURL = 'http://localhost:8000/api'
 
 const form = document.getElementById('urlForm');
 form.addEventListener('submit', handleSubmit);
@@ -15,16 +15,36 @@ function handleSubmit(event) {
     const formText = document.getElementById('name').value;
 
     // This is an example code that checks the submitted name. You may remove it from your code
-    checkForName(formText);
-    
+    let result = checkForName(formText);
+
     // Check if the URL is valid
- 
-        // If the URL is valid, send it to the server using the serverURL constant above
-      
+
+    // If the URL is valid, send it to the server using the serverURL constant above
+    if (result) {
+        sendDataToServer(formText)
+    }
 }
 
 // Function to send data to the server
-
+async function sendDataToServer(text) {
+    let resultElement = document.getElementById("results")
+    let body = await fetch(serverURL, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            text: text
+        })
+    })
+    try {
+        let result = await body.json()
+        resultElement.innerHTML = JSON.stringify(result)
+    } catch (exception) {
+        console.log("ERROR WAS THROWING WHILE CALL TO SERVER: ", exception)
+        resultElement.innerHTML = "ERROR"
+    }
+}
 // Export the handleSubmit function
 export { handleSubmit };
 
