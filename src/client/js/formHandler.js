@@ -22,6 +22,11 @@ function handleSubmit(event) {
     // If the URL is valid, send it to the server using the serverURL constant above
     if (result) {
         sendDataToServer(formText)
+    } else {
+        let errElement = document.getElementById("error")
+        errElement.innerHTML = "Invalid Input"
+        let resultElement = document.getElementById("results")
+        resultElement.innerHTML = ""
     }
 }
 

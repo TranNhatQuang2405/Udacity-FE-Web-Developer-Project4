@@ -17,6 +17,8 @@ concerned with the interactions between computers and human (natural) languages,
 process and analyze large amounts of natural language data.
 
 You could spend years and get a masters degree focusing on the details of creating NLP systems and algorithms. Typically, NLP programs require far more resources than individuals have access to, but a fairly new API called Aylien has put a public facing API in front of their NLP system. We will use it in this project to determine various attributes of an article or blog post.
+## Author
+QuangTN14
 
 ## Getting started
 
@@ -25,7 +27,7 @@ It would probably be good to first get your basic project setup and functioning.
 Remember that once you clone, you will still need to install everything:
 
 `cd` into your new folder and run:
-- `npm install`
+- `npm install --legacy-peer-deps`
 
 ## Setting up the API
 
