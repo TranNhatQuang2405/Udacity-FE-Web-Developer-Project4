@@ -1,4 +1,11 @@
+# Author
+QuangTN14
+
+# Pre-condition
+Node version: 16
+
 # Project Instructions
+
 
 This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
 
@@ -17,8 +24,7 @@ concerned with the interactions between computers and human (natural) languages,
 process and analyze large amounts of natural language data.
 
 You could spend years and get a masters degree focusing on the details of creating NLP systems and algorithms. Typically, NLP programs require far more resources than individuals have access to, but a fairly new API called Aylien has put a public facing API in front of their NLP system. We will use it in this project to determine various attributes of an article or blog post.
-## Author
-QuangTN14
+
 
 ## Getting started
 
