@@ -1,18 +1,18 @@
-import { checkForName } from "../src/client/js/nameChecker"
+import { checkValidUrl } from "../src/client/js/checkValidUrl"
 
 
 describe("Testing the validate functionality", () => {
-    test("Testing the checkForName function", () => {
-        expect(checkForName).toBeDefined();
+    test("Testing the checkValidUrl function", () => {
+        expect(checkValidUrl).toBeDefined();
     })
 
     test("Testing the checkForName function when it return true", () => {
-        let result = checkForName("Picard")
+        let result = checkValidUrl("http://google.com")
         expect(result).toBeTruthy()
     })
 
     test("Testing the checkForName function when it return false", () => {
-        let result = checkForName("Picard TEST")
+        let result = checkValidUrl("TEST")
         expect(result).toBeFalsy()
     })
 });

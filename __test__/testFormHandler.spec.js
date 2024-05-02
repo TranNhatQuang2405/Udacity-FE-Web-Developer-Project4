@@ -1,8 +1,12 @@
 import { handleSubmit } from "../src/client/js/formHandler"
 
 
-
 describe("Testing the submit functionality", () => {
+    beforeAll(() => {
+        global.Client = {
+            checkValidUrl: jest.fn()
+        }
+    })
     document.body.innerHTML = `
         <div>
             <form id="urlForm">

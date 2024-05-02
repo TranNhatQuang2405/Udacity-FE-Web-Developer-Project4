@@ -17,9 +17,8 @@ app.use(express.static('dist'))
 console.log(__dirname);
 
 // Variables for url and api key
-const API_ENDPOINT = "https://api.meaningcloud.com/class-2.0"
+const API_ENDPOINT = "https://api.meaningcloud.com/sentiment-2.1"
 const API_KEY = process.env.API_KEY
-const API_ID = process.env.API_ID
 
 app.get('/', function (req, res) {
     res.send("This is the server API page, you may access its services via the client app.");
@@ -32,11 +31,10 @@ app.get('/', function (req, res) {
 
 // POST Route
 app.post("/api", async function (req, res) {
-    let text = req.body.text
+    let url = req.body.url
     const formdata = new FormData();
     formdata.append("key", API_KEY);
-    formdata.append("txt", text);
-    formdata.append("model", API_ID);
+    formdata.append("url", url);
 
     const requestOptions = {
         method: 'POST',
